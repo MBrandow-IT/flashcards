@@ -1,6 +1,6 @@
 # Flashcard Study App
 
-A modern, interactive flashcard application built with Next.js and TypeScript for effective studying and memorization.
+A simple flashcard study app built with Next.js and TypeScript for effective studying and memorization. This is a simple app meant to show how fast development can be with Next.js and Tailwind CSS when combined with cursor. This app was built in about 1 hour.
 
 ## Features
 
@@ -25,15 +25,15 @@ A modern, interactive flashcard application built with Next.js and TypeScript fo
 
 - Node.js (v14 or later)
 - npm or yarn
-- SQL Server instance
+- SQL Server instance, I just use a local express server for this project.
 
 ### Installation
 
 1. Clone the repository
 
 ```bash
-git clone https://github.com/yourusername/flashcard-study-app.git
-cd flashcard-study-app
+git clone https://github.com/MBrandow-IT/flashcards.git
+cd flashcards
 ```
 
 2. Install dependencies
