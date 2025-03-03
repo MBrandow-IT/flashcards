@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 @theme {
   --font-sans: var(--font-geist-sans);
@@ -21,4 +21,26 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+@keyframes slideOutLeft {
+  0% {
+    transform: translateX(0) translateZ(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-100%) translateZ(-100px);
+    opacity: 0;
+  }
+}
+
+@keyframes slideOutRight {
+  0% {
+    transform: translateX(0) translateZ(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100%) translateZ(-100px);
+    opacity: 0;
+  }
 }
