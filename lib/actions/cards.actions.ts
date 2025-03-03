@@ -1,6 +1,7 @@
 'use server';
 
 import { executeQueryWithRetry } from '../db/dbConnection';
+import { insertTableRecords } from '../db/tableActions';
 
 export interface CreateCard {
   Card_Set_ID: number;
@@ -23,6 +24,15 @@ export const createCard = async (card: CreateCard) => {
   } catch (error) {
     console.error(error);
     throw new Error('Failed to create card');
+  }
+};
+
+export const createCards = async (cards: CreateCard[]) => {
+  try {
+    await insertTableRecords('Cards', cards);
+  } catch (error) {
+    console.error(error);
+    throw new Error('Failed to create cards');
   }
 };
 

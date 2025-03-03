@@ -86,7 +86,7 @@ const ReverseReview = ({ cards, cardSetName, onExit, randomize = false }: Revers
         <h1 className="text-2xl font-bold">{cardSetName}</h1>
         <button
           onClick={onExit}
-          className="bg-gray-200 text-gray-800 py-2 px-4 rounded hover:bg-gray-300"
+          className="bg-gray-200 text-gray-800 py-2 px-4 rounded hover:bg-gray-300 cursor-pointer"
         >
           Exit Review
         </button>

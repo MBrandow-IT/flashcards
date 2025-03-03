@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { createCard } from '@/lib/actions/cards.actions';
+import { createCard, createCards } from '@/lib/actions/cards.actions';
 
 interface AddCardsProps {
   cardSetId: number;
@@ -48,14 +48,12 @@ const AddCards = ({ cardSetId, onCardAdded }: AddCardsProps) => {
 
     try {
       // Create all cards sequentially
-      for (const card of cards) {
-        await createCard({
-          Card_Set_ID: cardSetId,
-          Card_Front: card.front,
-          Card_Back: card.back,
-        });
-      }
-
+      const cardsToCreate = cards.map((card) => ({
+        Card_Set_ID: cardSetId,
+        Card_Front: card.front,
+        Card_Back: card.back,
+      }));
+      await createCards(cardsToCreate);
       // Clear form after successful submission
       setCards([{ front: '', back: '' }]);
       setSuccessMessage(`Successfully added ${cards.length} card${cards.length > 1 ? 's' : ''}`);
